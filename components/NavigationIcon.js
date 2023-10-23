@@ -16,9 +16,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-  footerIcon: {
-    flex: 2,
-  },
 });
 
 export default NavigationIcon;
