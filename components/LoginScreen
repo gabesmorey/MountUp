@@ -1,0 +1,40 @@
+import React, { useState, useContext } from 'react';
+import { View, TextInput, Button, Text } from 'react-native';
+import { AuthContext } from './AuthContext';
+
+const LoginScreen = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const { login } = useContext(AuthContext);
+
+  const handleLogin = () => {
+    // In a real app, you'd perform authentication here and fetch user data
+    // For this example, we'll simulate a successful login with a user object
+    const user = {
+      name: 'John Doe',
+      email: 'johndoe@example.com',
+    };
+    
+    login(user);
+  };
+
+  return (
+    <View>
+      <Text>Login Screen</Text>
+      <TextInput
+        placeholder="Username"
+        value={username}
+        onChangeText={setUsername}
+      />
+      <TextInput
+        placeholder="Password"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+      />
+      <Button title="Login" onPress={handleLogin} />
+    </View>
+  );
+};
+
+export default LoginScreen;
