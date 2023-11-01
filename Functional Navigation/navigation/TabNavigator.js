@@ -5,7 +5,7 @@ import {FontAwesome, Entypo} from 'react-native-vector-icons';
 
 import Roster from "../screens/Roster";
 import Schedule from "../screens/Schedule";
-import Stats from "../screens/Roster";
+import Stats from "../screens/Stats";
 import { MainStackNavigator } from "./StackNavigator";
 
 const Tab = createBottomTabNavigator();
