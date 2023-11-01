@@ -32,6 +32,7 @@ const BottomTabNavigator = () => {
               color={focused ? '#003366' : '#003366'}
             />
           ),
+          title: "Home"
         }} name="HomeStack" component={MainStackNavigator} />
       <Tab.Screen options={{
           tabBarIcon: ({ focused }) => (
