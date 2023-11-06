@@ -2,9 +2,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {FontAwesome, Entypo} from 'react-native-vector-icons';
 
 import Schedule from "../screens/Schedule";
-import Stats from "../screens/Stats";
-import { HomeStackNavigator, RosterStackNavigator } from "./ScreensStackNavigators";
-import Roster from "../screens/Roster";
+import Following from "../screens/Following";
+import { HomeStackNavigator } from "./ScreensStackNavigators";
+import LiveGames from "../screens/LiveGames";
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +40,7 @@ const BottomTabNavigator = () => {
               color={focused ? '#003366' : '#003366'}
             />
           ),
-        }} name="Roster" component={Roster} />
+        }} name="Following" component={Following} />
       <Tab.Screen options={{
           tabBarIcon: ({ focused }) => (
             <FontAwesome
@@ -53,12 +53,12 @@ const BottomTabNavigator = () => {
       <Tab.Screen options={{
           tabBarIcon: ({ focused }) => (
             <FontAwesome
-              name={'bar-chart'}
+              name={'video-camera'}
               size={34}
               color={focused ? '#003366' : '#003366'}
             />
           ),
-        }} name="Stats" component={Stats} />
+        }} name="Live Games" component={LiveGames} />
       
     </Tab.Navigator>
   );
