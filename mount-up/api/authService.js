@@ -1,0 +1,26 @@
+import instance from "./core";
+
+// export type User = {
+//     _id: string;
+//     username: string;
+//     password: string;
+//     createdAt: Date;
+//     updatedAt: Date;
+// };
+
+// type UserData = {
+//     success: boolean;
+//     data: User;
+// }
+
+export const loginUser = async(username, password) => {
+    return new Promise(async (resolve, reject) => {
+        const response = await instance.post("/user/login", {username, password});
+
+        if(response){
+            resolve(response.data);
+        } else {
+            resolve(undefined);
+        }
+    });
+}
