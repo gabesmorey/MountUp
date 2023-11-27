@@ -1,7 +1,7 @@
 import axios, {AxiosInstance} from 'axios';
 
 const instance = axios.create({
-    baseURL: "http://192.168.1.130:7000", // Real life uses system variables to quickly switch b/t dev and production
+    baseURL: "http://10.3.0.93:7000", // Real life uses system variables to quickly switch b/t dev and production
     withCredentials: true
 });
 
