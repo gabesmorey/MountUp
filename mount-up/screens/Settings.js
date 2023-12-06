@@ -1,11 +1,13 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { useUser } from "../context/UserContext";
+import HelpAndSupport from "../components/HelpandSupport";
 
 function Settings(){
-    const { firstName, lastName } = useUser();
+    const { updateUser } = useUser();
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [newPassword, setNewPassword] = useState('');
     const [selectedLanguage, setSelectedLanguage] = useState('english');
+    const [isContactVisible, setIsContactVisible] = useState(false);
 
     const changeLanguage = () => {
         // Toggle between English and Spanish
@@ -34,22 +36,41 @@ function Settings(){
             lastName: '',
             password: '',
             email: '',
+            following: [''],
             isAStudent: false,
             studentID: undefined,
         });
+    };
+
+    const openContact = () => {
+        setIsContactVisible(true);
+    };
+    
+    const closeContact = () => {
+        setIsContactVisible(false);
     };
 
     return (
         <View style={styles.container}>
             <View style={styles.yellow_spacers}></View>
             <View>
-                <Text>Logged in as {firstName}</Text>
                 <TouchableOpacity onPress={logout}>
                     <Text style={styles.logoutButton}>Logout</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.yellow_spacers}></View>
-            <Text>Help/Support</Text>
+            <View style={styles.container}>
+                <TouchableOpacity onPress={openContact}>
+                    <Text>Help/Support</Text>
+                </TouchableOpacity>
+
+                <Modal visible={isContactVisible} animationType="slide" onRequestClose={closeContact}>
+                    <HelpAndSupport />
+                    <TouchableOpacity onPress={closeContact}>
+                    <Text style={styles.closeButton}>Close</Text>
+                    </TouchableOpacity>
+                </Modal>
+            </View>
             <View style={styles.yellow_spacers}></View>
             <Text>Language</Text>
             <TouchableOpacity onPress={changeLanguage()}/>
