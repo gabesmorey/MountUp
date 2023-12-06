@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { useUser } from "../context/UserContext";
 
 function Settings(){
-    const { username } = useUser();
+    const { firstName, lastName } = useUser();
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [newPassword, setNewPassword] = useState('');
     const [selectedLanguage, setSelectedLanguage] = useState('english');
@@ -27,11 +27,26 @@ function Settings(){
         toggleModal();
     };
 
+    const logout = () => {
+        // Reset user info to empty values
+        updateUser({
+            firstName: '',
+            lastName: '',
+            password: '',
+            email: '',
+            isAStudent: false,
+            studentID: undefined,
+        });
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.yellow_spacers}></View>
-            <View><Text>Logged in as {username}</Text>
-            <TouchableOpacity onPress={logout()}>Logout</TouchableOpacity>
+            <View>
+                <Text>Logged in as {firstName}</Text>
+                <TouchableOpacity onPress={logout}>
+                    <Text style={styles.logoutButton}>Logout</Text>
+                </TouchableOpacity>
             </View>
             <View style={styles.yellow_spacers}></View>
             <Text>Help/Support</Text>
@@ -77,6 +92,9 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    logoutButton: {
+        color: 'FFCC00', 
     },
 });
 
