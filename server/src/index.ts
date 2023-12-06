@@ -3,8 +3,9 @@ import * as http from 'http';
 import * as bodyParser from 'body-parser';
 import session from 'express-session';
 import user from './core/routes/user';
-import sports from './core/routes/sports';
+import sports from './core/routes/teams';
 import articles from './core/routes/articles';
+import events from './core/routes/events';
 import {Me} from './core/models/me';
 import config from './core/config';
 import { UserError } from './core/errors/base';
@@ -51,6 +52,7 @@ export async function main(options: IMainOptions){
     app.use('/user', user);
     app.use('/sports', sports);
     app.use('/articles', articles);
+    app.use('/events', events);
     app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
         if(err instanceof UserError){
             res.status(err.statusCode).send({message: err.message});
