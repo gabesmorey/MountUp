@@ -15,7 +15,7 @@ export const UserProvider = ({ children }) => {
       });
 
     const updateUser = (newUserInfo) => {
-        setUserInfo(newUserInfo);
+        setUserInfo({...userInfo, ...newUserInfo});
     };
 
     return (
