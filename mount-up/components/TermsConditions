@@ -1,0 +1,19 @@
+import React from 'react';
+import { View, TouchableOpacity, Alert, Text } from 'react-native';
+
+export default function TermsAndConditions({onClick}){
+  return (
+    <View style={{ flex: 1, justifyContent: 'left', alignItems: 'left' }}>
+      <TouchableOpacity onPress={() => onClick(Alert.alert(
+      'Terms and Conditions',
+      "Privacy Policy:\n1. Information Collection:\nWe collect personal information, such as names, email addresses, and device information, to provide and improve our services.\n\n2. Use of Information:\nThe collected information is used for account creation, app functionality, and service improvement.\n\n3. Data Sharing:\nWe may share personal information with third-party service providers for analytics, advertising, or other business purposes.\n\n4. Security Measures:\nWe implement reasonable security measures to protect against unauthorized access or alteration of personal information.\n\n5. User Rights:\nUsers have the right to access, correct, or delete their personal information.\n\n6. Policy Changes:\nWe may update our Privacy Policy, and users will be notified of any changes.\n\nTerms of Service:\n\n1. User Responsibilities:\nUsers are responsible for their use of the app and must comply with our community guidelines.\n\n2. Intellectual Property Rights:\nWe retain ownership of the app and its content. Users are granted a limited license to use the app.\n\n3. Limitation of Liability:\nWe are not liable for any damages resulting from the use or inability to use our service.\n\n4. Dispute Resolution:\nAny disputes will be resolved through arbitration in a specific jurisdiction.\n\n5. Termination Policy:\nWe reserve the right to terminate a user's access to the app for violation of our terms.\n\n6. Changes to Terms:\nWe may update our Terms of Service, and users will be notified of any changes.",
+      [{
+          text: 'Close',
+          style: 'cancel'
+        }]
+    ))}>
+        <Text>View Terms and Conditions/Privacy Policy</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
