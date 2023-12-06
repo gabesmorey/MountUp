@@ -1,11 +1,33 @@
+// IndividualSportHome.js
 import { View, Text } from "react-native";
+import Baseball from "./Schedule/Baseball";
+import Football from "./Schedule/Football";
+import Basketball from "./Schedule/Basketball";
+import Volleyball from "./Schedule/Volleyball";
 
-function Schedule(){
-    return(
+function IndividualScheduleHome({ route }) {
+    const sport = route.params;
+    const name = sport.sport;
+
+    let scheduleView;
+
+    if (name === "Basketball") {
+        scheduleView = <Basketball />;
+    } else if (name === "Baseball") {
+        scheduleView = <Baseball />;
+    } else if (name === "Football") {
+        scheduleView = <Football />;
+    } else if (name === "Volleyball") {
+        scheduleView = <Volleyball />;
+    } else {
+        scheduleView = <Text>No view available for {name}</Text>;
+    }
+
+    return (
         <View>
-            <Text>This is the schedule page</Text>
+            {scheduleView}
         </View>
     );
 }
 
-export default Schedule;
+export default IndividualScheduleHome;
