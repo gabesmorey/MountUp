@@ -10,6 +10,7 @@ export const UserProvider = ({ children }) => {
         lastName: '',
         password: '',
         email: '',
+        following: [''],
         isAStudent: false,
         studentID: undefined,
       });
