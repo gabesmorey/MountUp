@@ -117,34 +117,34 @@ function Navigation() {
             <span>Teams +</span>
             <ul className="dropdown-content">
               <li>
-                <Link to="https://athletics.anderson.edu/landing/index">Anderson</Link>
+                <Link to="https://athletics.anderson.edu/landing/index" target="_blank">Anderson</Link>
               </li>
               <li>
-                <Link to="https://blufftonbeavers.com/landing/index">Bluffton</Link>
+                <Link to="https://blufftonbeavers.com/landing/index" target="_blank">Bluffton</Link>
               </li>
               <li>
-                <Link to="https://www.defianceathletics.com/landing/index">Defiance</Link>
+                <Link to="https://www.defianceathletics.com/landing/index" target="_blank">Defiance</Link>
               </li>
               <li>
-                <Link to="https://goearlham.com/">Earlham</Link>
+                <Link to="https://goearlham.com/" target="_blank">Earlham</Link>
               </li>
               <li>
-                <Link to="https://franklingrizzlies.com/">Franklin</Link>
+                <Link to="https://franklingrizzlies.com/" target="_blank">Franklin</Link>
               </li>
               <li>
-                <Link to="https://athletics.hanover.edu/">Hanover</Link>
+                <Link to="https://athletics.hanover.edu/" target="_blank">Hanover</Link>
               </li>
               <li>
-                <Link to="https://msjlions.com">Mount St. Joseph</Link>
+                <Link to="https://msjlions.com" target="_blank">Mount St. Joseph</Link>
               </li>
               <li>
-                <Link to="https://muspartans.com/">Manchester</Link>
+                <Link to="https://muspartans.com/" target="_blank">Manchester</Link>
               </li>
               <li>
-                <Link to="https://athletics.rose-hulman.edu/">Rose-Hulman</Link>
+                <Link to="https://athletics.rose-hulman.edu/" target="_blank">Rose-Hulman</Link>
               </li>
               <li>
-                <Link to="https://transysports.com/">Transylvania</Link>
+                <Link to="https://transysports.com/" target="_blank">Transylvania</Link>
               </li>
               {/* Add links for other teams here */}
             </ul>
